@@ -8,7 +8,7 @@ The task is to implement the template Bestsellers parameterized by the Product t
 - `size_t rank(const Product& p) const` returns the position of p in the list of all recorded product types sorted by pieces sold in descending order with indexing starting at 1 (rank(p) = 1 for the best-selling product p); if there are more product types with the same number of pieces sold, you can order them arbitrarily,
 - `const Product& product(size_t rank) const` inverse function to rank (unless an exception occurs, it holds that product(rank(p)) == p and rank(product(r)) == r),
 - `size_t sold(size_t r) const` number of pieces sold of the r-th best-selling product,
-- `size_t sold(size_t from, size_t to) const` analogous to the single-parameter version, it returns the sum of pieces sold over the interval of ranks from from to to (including both endpoints; i.e., sold(r, r) == sold(r) and sold(1, products()) is the total number of pieces sold over all products; input to < from is considered invalid).
+- `size_t sold(size_t from, size_t to) const` analogous to the single-parameter version, it returns the sum of pieces sold over the interval of ranks from `from` to `to` (including both endpoints; i.e., `sold(r, r) == sold(r) and sold(1, products())` is the total number of pieces sold over all products; input `to < from` is considered invalid).
 
 Bonus only: `size_t first_same(size_t r) const` and `size_t last_same(size_t r) const` returns the smallest (resp. largest) rank x such that `sold(x) == sold(r)`. These methods are used only in the bonus test. If you are not solving the bonus test, leave the default implementation that always returns 0.
 
